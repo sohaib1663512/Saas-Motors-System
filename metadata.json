@@ -1,0 +1,6 @@
+{
+  "name": "Naqeeb Motors Dealership ERP",
+  "description": "Production-grade enterprise Dealership Management ERP System for Naqeeb Motors & Property Advisor featuring digitized Master Sale Agreements, inventory tracking, financial ledgers, digital signatures, and AI verification.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

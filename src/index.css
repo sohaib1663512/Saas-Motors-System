@@ -1,0 +1,67 @@
+@import "tailwindcss";
+
+@layer utilities {
+  @media print {
+    /* Standard A4 page dimensions with clean safety margins */
+    @page {
+      size: A4 portrait;
+      margin: 12mm 10mm 12mm 10mm;
+    }
+
+    /* Force clean white background, black text, and standard print scaling */
+    html, body {
+      background: #ffffff !important;
+      color: #000000 !important;
+      font-size: 10pt !important;
+      line-height: 1.35 !important;
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+    }
+
+    /* Hide screen-only interactive elements during print/PDF generation */
+    .print\:hidden,
+    nav,
+    header,
+    button:not(.printable-btn),
+    .no-print {
+      display: none !important;
+    }
+
+    /* Force all scrollable containers and fixed max-height boxes to expand fully */
+    * {
+      max-height: none !important;
+      overflow: visible !important;
+      box-shadow: none !important;
+    }
+
+    /* Prevent awkward element slicing across A4 page breaks */
+    .break-inside-avoid,
+    .bg-slate-50,
+    .border,
+    .grid > div,
+    section {
+      break-inside: avoid !important;
+      page-break-inside: avoid !important;
+    }
+
+    /* Avoid page breaks right after section titles */
+    h1, h2, h3, h4, h5, h6 {
+      break-after: avoid !important;
+      page-break-after: avoid !important;
+    }
+
+    /* Remove outer centering margins and bounds for print output */
+    .max-w-4xl, .max-w-5xl, .max-w-3xl {
+      max-width: 100% !important;
+      width: 100% !important;
+      margin: 0 !important;
+      padding: 0 !important;
+    }
+
+    /* Ensure text wrapping and clean borders on table/grid elements */
+    p, span, div {
+      word-break: break-word;
+    }
+  }
+}
+
